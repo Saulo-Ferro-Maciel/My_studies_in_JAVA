@@ -12,7 +12,7 @@ public class App {
       var Configura_Api_Filme = new configuraAPI_Filme();
       var Configura_API_Nasa = new configuraAPI_Nasa();
       
-      /*"https://api.mocki.io/v2/549a5d8b" "https://api.mocki.io/v2/549a5d8b/NASA-APOD"*/ 
+      //"https://api.mocki.io/v2/549a5d8b" "https://api.mocki.io/v2/549a5d8b/NASA-APOD"
 
       String url;
       int resposta;
@@ -32,12 +32,13 @@ public class App {
           conteudo dados = conteudos.get(a);
 
           InputStream inputURL = new URL(dados.getUrl_Image()).openStream();
-          String nomeArquivo = dados.getTitle(),
+          String 
+          nomeArquivo = dados.getTitle(),
           extensaoArquivo = "png",
-          frase = "IMERSÃO JAVA\nALURA";
+          frase = "IMERSÃO JAVA";
 
           Sticker.criando(inputURL, nomeArquivo, extensaoArquivo, frase);
-
+          System.out.println(dados.getTitle());
         }
       } else{
         url = "https://api.mocki.io/v2/549a5d8b";
@@ -50,12 +51,12 @@ public class App {
           conteudo dados = conteudos.get(a);
 
           InputStream inputURL = new URL(dados.getUrl_Image()).openStream();
-          String nomeArquivo = dados.getTitle(),
+          String 
+          nomeArquivo = dados.getTitle(),
           extensaoArquivo = "png",
           frase = Configura_Api_Filme.frase;
 
           Sticker.criando(inputURL, nomeArquivo, extensaoArquivo, frase);
-
         }
       } 
       System.out.println(hello);
